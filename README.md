@@ -1,39 +1,66 @@
-# Flask Blog Project
-This project is a simple blog application built using Flask. It fetches blog posts from an external API (npoint.io) and displays them on various pages. It also includes a dynamic routing feature to display individual blog posts based on their unique ID.
-## Features
-- **Home Page (/)**: Displays all blog posts fetched from the external API.
-- **About Page (/about)**: A static page that provides information about the blog.
-- **Contact Page (/contact)**: A static page with a contact form or contact details.
-- **Post Detail Page (/post/<int:index>)**: Displays a single post based on its ID from the API
-## Prerequisites
+# 📝 Flask Blog Project
+A dynamic blog application built using Flask. Users can add, edit, and delete blog posts directly from the web interface. The application uses SQLite for database management, Bootstrap for styling, and CKEditor for blog content editing.
+## 📋 Features
+- Home Page (/): Displays all blog posts from the database.
+- Post Detail Page (/post/<post_id>): View a detailed page of an individual blog post.
+- Create New Post (/new-post): Add a new blog post using a form with CKEditor.
+- Edit Post (/edit-post/<post_id>): Update an existing blog post's content.
+- Delete Post (/delete/<post_id>): Remove a blog post permanently from the database.
+- About Page (/about): Provides information about the blog.
+- Contact Page (/contact): Includes contact details or a contact form.
+## 🚀 Prerequisites
 Make sure you have the following installed:
 - Python 3.x
 - Flask
-- Requests
-## Installation
+- Flask-Bootstrap
+- Flask-WTF
+- Flask-CKEditor
+## 📦 Installation
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git clone <repository-url>  
+cd <project-directory>  
 ```
-## How to Run
+2. Install dependencies:
+On Windows:
+```bash
+python -m pip install -r requirements.txt
+```
+On MacOS/Linux:
+```bash
+pip3 install -r requirements.txt  
+```
+## 🛠️ How to Run
 1. Start the Flask server:
 ```bash
-python app.py
+python main.py  
 ```
-2. Open your browser and go to http://127.0.0.1:5001 to view the website.
-## Usage
-- The homepage will display all blog posts.
-- The About page provides information about the project.
-- The Contact page can include any necessary contact details or a form.
-- To view a specific blog post, navigate to /post/<id> where <id> is the ID of the post you want to view.
-## External API
-The project fetches blog posts from this npoint.io API:
-- API URL: https://api.npoint.io/c790b4d5cab58020d391
-- The data returned from the API includes post details like id, title, subtitle, and body.
-## Customization
-- You can replace the npoint URL with your own API if you have a different source of blog posts.
-- Modify the templates (index.html,post.html) to suit your design.
-## License
-This project is open-source and available under the MIT License.
+2. Open your browser and navigate to:
+```arduino
+http://127.0.0.1:5002  
+```
+## 🖊️ Usage
+- Add New Posts: Visit /new-post and use the form to create a new blog post.
+- Edit Existing Posts: Navigate to /edit-post/<post_id> to update content.
+- Delete Posts: Go to /delete/<post_id> to remove a post permanently.
+- View All Posts: Check the homepage to see all published blog posts.
+- Static Pages: Visit /about and /contact for additional blog information.
+## 🗄️ Database Details
+- Database: SQLite (posts.db)
+- Table: BlogPost
+- Columns:
+  - id (Primary Key)
+  - title
+  - subtitle
+  - date
+  - body
+  - author
+  - img_url
+## 🎨 Customization
+- Update the HTML templates (index.html, post.html, etc.) to change the design.
+- Modify main.py to add more routes or enhance functionality.
+- Replace CKEditor with another editor if needed.
+## 📜 License
+This project is licensed under the MIT License. Feel free to use, modify, and distribute it as per the license.
 ---
+
